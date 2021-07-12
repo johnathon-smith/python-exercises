@@ -143,6 +143,17 @@ print('Number of students that prefer light coffee:', light_coffee_count)
 print('Number of students that prefer medium coffee:', medium_coffee_count)
 print('Number of students that prefer dark coffee:', dark_coffee_count)
 #3. How many types of each pet are there?
+print('\n3)')
+
+types_of_pets = []
+
+for student in students:
+    if len(student["pets"]) > 0:
+        for pet in student["pets"]:
+            if types_of_pets.count(pet["species"]) == 0:
+                types_of_pets.append(pet["species"])
+
+print(f'There are {len(types_of_pets)} different types of pets.')
 
 #4. How many grades does each student have? Do they all have the same number of grades?
 previous_student_num_grades = len(students[0]["grades"])
@@ -358,6 +369,51 @@ print(f'The average number of pets for medium coffee drinkers is {num_med_coffee
 #18. What is the most common type of pet for web development students?
 print('\n18)')
 
+web_dev_horse_count = 0
+web_dev_dog_count = 0
+web_dev_cat_count = 0
+
+for student in students:
+    if student["course"] == 'web development' and len(student["pets"]) > 0:
+        for pet in student["pets"]:
+            if pet["species"] == 'horse':
+                web_dev_horse_count += 1
+            elif pet["species"] == 'dog':
+                web_dev_dog_count += 1
+            else:
+                web_dev_cat_count += 1
+
+if web_dev_horse_count > web_dev_dog_count and web_dev_horse_count > web_dev_cat_count:
+
+    print(f'The most common type of pet for web development students is a horse with a count of {web_dev_horse_count}.')
+
+elif web_dev_dog_count > web_dev_horse_count and web_dev_dog_count > web_dev_cat_count:
+
+    print(f'The most common type of pet for web development students is a dog with a count of {web_dev_dog_count}.')
+
+else:
+    print(f'The most common type of pet for web development students is a cat with a count of {web_dev_cat_count}.')
+
 
 #19. What is the average name length?
+print('\n19)')
+
+total_length_of_student_names = 0
+
+for student in students:
+    total_length_of_student_names += (len(student["student"]) - 1) #subtract 1 to account for the space
+
+print(f'The average name length is {total_length_of_student_names / num_students:.2f} characters.')
+
 #20. What is the highest pet age for light coffee drinkers?
+print('\n20)')
+
+highest_pet_age_for_light_coffee = 0
+
+for student in students:
+    if student["coffee_preference"] == 'light' and len(student["pets"]) > 0:
+        for pet in student["pets"]:
+            if pet["age"] > highest_pet_age_for_light_coffee:
+                highest_pet_age_for_light_coffee = pet["age"]
+
+print(f'The highest pet age for light coffee drinkers is {highest_pet_age_for_light_coffee} years.')
