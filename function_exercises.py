@@ -178,10 +178,21 @@ def mil_to_civ_time(time):
 
 #Create a function named col_index. It should accept a spreadsheet column name, and return the index number of the column.
 def col_index(col_name):
-    multiplier = (len(col_name) - 1) * 26 #This determines the base value of the input column name (not including the last letter)
+    if len(col_name) == 1: #First, determine the minimum possible value based on the length of the input string. Ex: 'A' = 1, and 'AAA' = 677
+        min_value = 1 #Had to include the base case for a single char input string because the math doesn't work otherwise
+    else:
+        min_value = pow(26,len(col_name) - 1) + 1
+    
+    power = len(col_name) - 1 #This variable sets the weight of each char's value in the input string. It will decrease incrementally in the loop
 
-    index = multiplier + ( ord( col_name[-1].upper() ) - 64 ) #add the ascii value of the last letter in the col_name - 64. This makes the value of 'A' = 1, 'B' = 2, and so on
-    return index
+    index = min_value #Set the index value to initially be the min_value calculated above
+
+    for char in col_name:
+        this_val = ( ord(char.upper()) - 65 ) * pow(26, power) #This gives a value for the current character and weighs it accordingly
+        index += this_val #add this_val to the index through each iteration
+        power -= 1 #incrementally decrease power by 1. This reduces the weight applied to the 'this_val' calculation in each subsequent iteration of the loop
+    
+    return index 
 
 
 #Set up an if statement to prevent the print statements from running when importing this file
@@ -250,6 +261,7 @@ if __name__ == '__main__':
     print('Testing function "mil_to_civ_time":')
     print(f'Result when input is "0000": {mil_to_civ_time("0000")}')
     print(f'Result when input is "0530": {mil_to_civ_time("0530")}')
+    print(f'Result when input is "1200": {mil_to_civ_time("1200")}')
     print(f'Result when input is "1730": {mil_to_civ_time("1730")}')
     print(f'Result when input is "2400": {mil_to_civ_time("2400")}')
 
@@ -258,6 +270,9 @@ if __name__ == '__main__':
     print(f'Result when input is "A": {col_index("A")}')
     print(f'Result when input is "Aa": {col_index("Aa")}')
     print(f'Result when input is "az": {col_index("az")}')
+    print(f'Result when input is "AAA": {col_index("AAA")}')
+    print(f'Result when input is "ABC": {col_index("ABC")}')
+
 
 
 
