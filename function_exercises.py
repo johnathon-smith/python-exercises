@@ -219,3 +219,16 @@ print(f'Result when input is "0530": {mil_to_civ_time("0530")}')
 print(f'Result when input is "1730": {mil_to_civ_time("1730")}')
 print(f'Result when input is "2400": {mil_to_civ_time("2400")}')
 
+#Create a function named col_index. It should accept a spreadsheet column name, and return the index number of the column.
+def col_index(col_name):
+    multiplier = (len(col_name) - 1) * 26 #This determines the base value of the input column name (not including the last letter)
+
+    index = multiplier + ( ord( col_name[-1].upper() ) - 64 ) #add the ascii value of the last letter in the col_name - 64. This makes the value of 'A' = 1, 'B' = 2, and so on
+    return index
+
+print('\nBonus 3)')
+print('Testing function "col_index":')
+print(f'Result when input is "A": {col_index("A")}')
+print(f'Result when input is "Aa": {col_index("Aa")}')
+print(f'Result when input is "az": {col_index("az")}')
+
