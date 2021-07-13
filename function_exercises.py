@@ -5,11 +5,7 @@ def is_two(num):
     
     return False
 
-print('\n1)')
-print('Testing function "is_two":')
-print(f'Result when input is "2": {is_two("2")}')
-print(f'Result when input is 2: {is_two(2)}')
-print(f'Result when input is "two": {is_two("two")}')
+
 
 #Define a function named is_vowel. It should return True if the passed string is a vowel, False otherwise.
 def is_vowel(string):
@@ -18,10 +14,7 @@ def is_vowel(string):
     
     return False
 
-print('\n2)')
-print('Testing function "is_vowel":')
-print(f'Result when input is "e": {is_vowel("e")}')
-print(f'Result when input is "b": {is_vowel("b")}')
+
 
 #Define a function named is_consonant. It should return True if the passed string is a consonant, False otherwise. 
 #Use your is_vowel function to accomplish this.
@@ -31,10 +24,7 @@ def is_consonant(string):
 
     return False
 
-print('\n3)')
-print('Testing function "is_consonant":')
-print(f'Result when input is "e": {is_consonant("e")}')
-print(f'Result when input is "b": {is_consonant("b")}')
+
 
 #Define a function that accepts a string that is a word. The function should capitalize the first letter of the word if the word starts with a consonant.
 def capitalize_consonant(string):
@@ -43,20 +33,14 @@ def capitalize_consonant(string):
     
     return string #otherwise, return the original string
 
-print('\n4)')
-print('Testing function "capitalize_consonant":')
-print(f'Result when input is "bridge": {capitalize_consonant("bridge")}')
-print(f'Result when input is "apple": {capitalize_consonant("apple")}')
+
 
 #Define a function named calculate_tip. It should accept a tip percentage (a number between 0 and 1) and the bill total, and return the amount to tip.
 #This function has the parameters percent(float), and bill_total(int) and returns a float.
 def calculate_tip(percent, bill_total):
     return bill_total * percent
 
-print('\n5)')
-print('Testing function "calculate_tip":')
-print(f'Result when input is .15, 10: {calculate_tip(.15, 10)}')
-print(f'Result when input is .25, 60: {calculate_tip(.25, 60)}')
+
 
 #Define a function named apply_discount. It should accept a original price, and a discount percentage, and return the price after the discount is applied.
 #This function has the parameters price(float or int) and discount(float) and returns a float value
@@ -64,18 +48,12 @@ def apply_discount(price, discount):
     discounted_price = price - (price * discount)
     return discounted_price
 
-print('\n6)')
-print('Testing function "apply_discount":')
-print(f'Result when input is 100, .10: {apply_discount(100, .10)}')
-print(f'Result when input is 50, .30: {apply_discount(50, .30)}')
+
 
 #Define a function named handle_commas. It should accept a string that is a number that contains commas in it as input, and return a number as output.
 def handle_commas(num_with_commas):
     return int(num_with_commas.replace(",","")) #replace all the commas with empty strings and return
 
-print('\n7)')
-print('Testing function "handle_commas":')
-print(f'Result when input is "1,000,000": {handle_commas("1,000,000")}')
 
 #Define a function named get_letter_grade. It should accept a number and return the letter grade associated with that number (A-F).
 def get_letter_grade(number_grade):
@@ -90,18 +68,13 @@ def get_letter_grade(number_grade):
     else:
         return 'A' #(90 and above = A)
 
-print('\n8)')
-print('Testing function "get_letter_grade"')
-print(f'Result when input is 88: {get_letter_grade(88)}')
-print(f'Result when input grade is 65: {get_letter_grade(65)}')
+
 
 #Define a function named remove_vowels that accepts a string and returns a string with all the vowels removed.
 def remove_vowels(string):
     return string.replace('a','').replace('e','').replace('i','').replace('o','').replace('u','') #replace all the vowels with empty strings and return
 
-print('\n9)')
-print('Testing function "remove_vowels":')
-print(f'Result when input is "laeioul": {remove_vowels("laeioul")}')
+
 
 #Define a function named normalize_name. It should accept a string and return a valid python identifier, that is:
 #anything that is not a valid python identifier should be removed
@@ -130,11 +103,6 @@ def normalize_name(string):
     else:
         return string
 
-print('\n10)')
-print('Testing function "normalize_name":')
-print(f'Result when input is "%2335Joh*n Smith": {normalize_name("%2335Joh*n Smith")}')
-print(f'Result when input is "85@ LONG sEnTeNcE": {normalize_name("85@ LONG sEnTeNcE")}')
-print(f'Result when input is "% 33de*f @": {normalize_name("% 33de*f @")}')
 
 #Write a function named cumulative_sum that accepts a list of numbers and returns a list that is the cumulative sum of the numbers in the list.
 #cumulative_sum([1, 1, 1]) returns [1, 2, 3]
@@ -149,10 +117,7 @@ def cumulative_sum(numbers):
     
     return new_list
 
-print('\n11)')
-print('Testing function "cumulative_sum":')
-print(f'Result when input is [1,3,5,8]: {cumulative_sum([1,3,5,8])}')
-print(f'Result when input is [1,2,3,4]: {cumulative_sum([1,2,3,4])}')
+
 
 #Bonus
 #Create a function named twelveto24. It should accept a string in the format 10:45am or 4:30pm 
@@ -176,10 +141,7 @@ def twelveto24(time):
         new_time = int(time) + 1200
         return str(new_time) #convert the int new_time to str and return
 
-print('\nBonus 1)')
-print('Testing function "twelveto24":')
-print(f'Result when input is "5:30am": {twelveto24("5:30am")}')
-print(f'Result when input is "5:30pm": {twelveto24("5:30pm")}')
+
 
 #Write a function that does the oppostie of twelveto24.
 def mil_to_civ_time(time):
@@ -212,12 +174,7 @@ def mil_to_civ_time(time):
 
     return time
     
-print('\nBonus 2)')
-print('Testing function "mil_to_civ_time":')
-print(f'Result when input is "0000": {mil_to_civ_time("0000")}')
-print(f'Result when input is "0530": {mil_to_civ_time("0530")}')
-print(f'Result when input is "1730": {mil_to_civ_time("1730")}')
-print(f'Result when input is "2400": {mil_to_civ_time("2400")}')
+
 
 #Create a function named col_index. It should accept a spreadsheet column name, and return the index number of the column.
 def col_index(col_name):
@@ -226,9 +183,81 @@ def col_index(col_name):
     index = multiplier + ( ord( col_name[-1].upper() ) - 64 ) #add the ascii value of the last letter in the col_name - 64. This makes the value of 'A' = 1, 'B' = 2, and so on
     return index
 
-print('\nBonus 3)')
-print('Testing function "col_index":')
-print(f'Result when input is "A": {col_index("A")}')
-print(f'Result when input is "Aa": {col_index("Aa")}')
-print(f'Result when input is "az": {col_index("az")}')
+
+#Set up an if statement to prevent the print statements from running when importing this file
+if __name__ == '__main__':
+    print('\n1)')
+    print('Testing function "is_two":')
+    print(f'Result when input is "2": {is_two("2")}')
+    print(f'Result when input is 2: {is_two(2)}')
+    print(f'Result when input is "two": {is_two("two")}')
+
+    print('\n2)')
+    print('Testing function "is_vowel":')
+    print(f'Result when input is "e": {is_vowel("e")}')
+    print(f'Result when input is "b": {is_vowel("b")}')
+
+    print('\n3)')
+    print('Testing function "is_consonant":')
+    print(f'Result when input is "e": {is_consonant("e")}')
+    print(f'Result when input is "b": {is_consonant("b")}')
+
+    print('\n4)')
+    print('Testing function "capitalize_consonant":')
+    print(f'Result when input is "bridge": {capitalize_consonant("bridge")}')
+    print(f'Result when input is "apple": {capitalize_consonant("apple")}')
+
+    print('\n5)')
+    print('Testing function "calculate_tip":')
+    print(f'Result when input is .15, 10: {calculate_tip(.15, 10)}')
+    print(f'Result when input is .25, 60: {calculate_tip(.25, 60)}')
+
+    print('\n6)')
+    print('Testing function "apply_discount":')
+    print(f'Result when input is 100, .10: {apply_discount(100, .10)}')
+    print(f'Result when input is 50, .30: {apply_discount(50, .30)}')
+
+    print('\n7)')
+    print('Testing function "handle_commas":')
+    print(f'Result when input is "1,000,000": {handle_commas("1,000,000")}')
+
+    print('\n8)')
+    print('Testing function "get_letter_grade"')
+    print(f'Result when input is 88: {get_letter_grade(88)}')
+    print(f'Result when input grade is 65: {get_letter_grade(65)}')
+
+    print('\n9)')
+    print('Testing function "remove_vowels":')
+    print(f'Result when input is "laeioul": {remove_vowels("laeioul")}')
+
+    print('\n10)')
+    print('Testing function "normalize_name":')
+    print(f'Result when input is "%2335Joh*n Smith": {normalize_name("%2335Joh*n Smith")}')
+    print(f'Result when input is "85@ LONG sEnTeNcE": {normalize_name("85@ LONG sEnTeNcE")}')
+    print(f'Result when input is "% 33de*f @": {normalize_name("% 33de*f @")}')
+
+    print('\n11)')
+    print('Testing function "cumulative_sum":')
+    print(f'Result when input is [1,3,5,8]: {cumulative_sum([1,3,5,8])}')
+    print(f'Result when input is [1,2,3,4]: {cumulative_sum([1,2,3,4])}')
+
+    print('\nBonus 1)')
+    print('Testing function "twelveto24":')
+    print(f'Result when input is "5:30am": {twelveto24("5:30am")}')
+    print(f'Result when input is "5:30pm": {twelveto24("5:30pm")}')
+
+    print('\nBonus 2)')
+    print('Testing function "mil_to_civ_time":')
+    print(f'Result when input is "0000": {mil_to_civ_time("0000")}')
+    print(f'Result when input is "0530": {mil_to_civ_time("0530")}')
+    print(f'Result when input is "1730": {mil_to_civ_time("1730")}')
+    print(f'Result when input is "2400": {mil_to_civ_time("2400")}')
+
+    print('\nBonus 3)')
+    print('Testing function "col_index":')
+    print(f'Result when input is "A": {col_index("A")}')
+    print(f'Result when input is "Aa": {col_index("Aa")}')
+    print(f'Result when input is "az": {col_index("az")}')
+
+
 
