@@ -177,6 +177,7 @@ def mil_to_civ_time(time):
 
 
 #Create a function named col_index. It should accept a spreadsheet column name, and return the index number of the column.
+#For example, col_index could be "A", "AA", "AZ", "BZ", "AAA" and so on
 def col_index(col_name):
     if len(col_name) == 1: #First, determine the minimum possible value based on the length of the input string. Ex: 'A' = 1, and 'AAA' = 677
         min_value = 1 #Had to include the base case for a single char input string because the math doesn't work otherwise
