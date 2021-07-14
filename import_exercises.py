@@ -101,14 +101,16 @@ print(f'The least common favorite fruit among users is the {least_fav_fruit} wit
 user_unread_message_counts = []
 
 for user in users:
+    user_messages = ''
+
     for char in user["greeting"]:
-        if char.isdigit() == False:
-            user["greeting"] = user["greeting"].replace(char, '')
+
+        if char.isdigit() == True:
+            user_messages = user_messages + char
     
-    num_messages = int(user["greeting"])
+    num_messages = int(user_messages)
     user_unread_message_counts.append(num_messages)
 
 total_unread_messages = sum(user_unread_message_counts)
 
 print(f'The total number of unread messages is {total_unread_messages}.')
-print(user_unread_message_counts)
