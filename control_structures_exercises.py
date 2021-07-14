@@ -249,7 +249,7 @@ books = [
     },
     {
         'Title': 'Unscripted',
-        'Author': 'James DeMarco',
+        'Author': 'MJ DeMarco',
         'Genre': 'Business'
     },
     {
