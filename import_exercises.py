@@ -7,7 +7,7 @@ print('Your calculated tip is:', tip)
 #Using itertools module, How many different ways can you combine the letters from "abc" with the numbers 1, 2, and 3?
 import itertools as it 
 
-combos = it.permutations(["a","b","c",1,2,3], 2)
+combos = it.product("abc",[1,2,3])
 
 print('\n2a')
 for item in combos:
